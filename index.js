@@ -50,10 +50,19 @@ const reset = () =>{
 
 }
 
-(function shuffle(){
+function shuffle(){
   cards.forEach( (card) =>{
     var index = Math.floor(Math.random() * 16 );
     card.style.order = index;
   })
-})();
+};
+window.addEventListener('load', shuffle);
 
+
+const resetbtn = document.querySelector(".btn");
+resetbtn.addEventListener('click', ()=>{
+  // console.log("working ....   yes");
+  cards.forEach( (card) =>  card.classList.remove("flip"));
+  isFlipped = false;
+  shuffle();
+})
