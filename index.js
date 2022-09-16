@@ -61,8 +61,14 @@ window.addEventListener('load', shuffle);
 
 const resetbtn = document.querySelector(".btn");
 resetbtn.addEventListener('click', ()=>{
-  // console.log("working ....   yes");
-  cards.forEach( (card) =>  card.classList.remove("flip"));
+  console.log("reset button clicked....");
+  cards.forEach( (card) =>  {
+    if(card != null){
+      card.addEventListener('click', flip);
+      card.classList.remove("flip")
+    }
+
+  });
   isFlipped = false;
   shuffle();
 })
