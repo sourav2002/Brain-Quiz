@@ -99,9 +99,9 @@ function resetButton(){
   return btn;
 }
 
-generateBoard();
-resetButton();
-shuffle();
+window.addEventListener('load', generateBoard(), resetButton());
+
+
 const cards = document.querySelectorAll(".card");
 console.log(cards);
 cards.forEach((card) => card.addEventListener("click", flip));
@@ -166,3 +166,5 @@ resetbtn.addEventListener('click', ()=>{
     shuffle();
   }, 800);
 })
+
+shuffle();
